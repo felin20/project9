@@ -20,6 +20,53 @@
 
 @keyframes p-motion-keyframes-appear-below{ from{ transform:translateY(calc(var(--p-space-100)*-1)); opacity:0; } to{ transform:none; opacity:1; } }
 
+.product-row{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 100px;
+  
+} 
+.products-r{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 50px;
+
+}
+
+.product-id{
+position: relative;
+right: 425px;
+display: flex;
+flex-direction: column;
+} 
+.product-image{
+  position: relative;
+  
+  display: flex;
+flex-direction: column;
+  } 
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+}
+
+.filter-input {
+  margin-right: 10px;
+}
+
+.add-product-button {
+  margin-left: auto;
+}
+
 :root{
   --polaris-version-number:'13.0.0';
 
@@ -6054,16 +6101,28 @@ li:first-of-type > .Polaris-Listbox-TextOption{
   align-items:center;
   justify-content:center;
 }
+.Polaris-DataTable {
+  --pc-data-table-first-column-width: 9.0625rem;
+  max-width: 100vw;
+  background-color: var(--p-color-bg-surface);
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  width: calc(100% - 20px); /* Adjust the width as needed */
+  margin: 0 auto; /* Center the DataTable */
+}
+.Polaris-DataTable__Cell--numeric:last-child {
+  min-width: 250px; /* Adjust the width as needed */
+}
 
-
-.Polaris-DataTable{
+/* .Polaris-DataTable{
   --pc-data-table-first-column-width:9.0625rem;
-  position:relative;
   max-width:100vw;
   background-color:var(--p-color-bg-surface);
-  border-radius:0;
+    position:relative;
+border-radius:0;
   overflow:hidden;
-}
+} */
 
 @media (min-width: 30.625em){
 

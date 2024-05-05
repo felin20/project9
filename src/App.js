@@ -1,24 +1,50 @@
+// App.js
 import React from 'react';
-import enTranslations from '@shopify/polaris/locales/en.json';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ProductListingPage from './components/ProductListingPage';
-import ProductModal from './components/ProductModal'; // Make sure the path is correct
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { AppProvider } from '@shopify/polaris';
+import enTranslations from '@shopify/polaris/locales/en.json';
+import ProductListingPage from './components/ProductListingPage';
+import { ImageProvider } from './components/ImageContext';
+import ImageUpload from './components/ImageUpload';
 
 function App() {
   return (
     <AppProvider i18n={enTranslations}>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={ProductListingPage} />
-        {/* Add more routes if necessary */}
-      </Switch>
-    </Router>
+      <ImageProvider>
+        <Router>
+          <Route exact path="/" component={ProductListingPage} />
+        </Router>
+        <ImageUpload />
+      </ImageProvider>
     </AppProvider>
   );
 }
 
 export default App;
+
+
+
+// import React from 'react';
+// import enTranslations from '@shopify/polaris/locales/en.json';
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import ProductListingPage from './components/ProductListingPage';
+// import ProductModal from './components/ProductModal'; // Make sure the path is correct
+// import { AppProvider } from '@shopify/polaris';
+
+// function App() {
+//   return (
+//     <AppProvider i18n={enTranslations}>
+//     <Router>
+//       <Switch>
+//         <Route exact path="/" component={ProductListingPage} />
+//         {/* Add more routes if necessary */}
+//       </Switch>
+//     </Router>
+//     </AppProvider>
+//   );
+// }
+
+// export default App;
 
 
 // import React from 'react';
