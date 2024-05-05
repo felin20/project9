@@ -18,7 +18,6 @@ export const ImageProvider = ({ children }) => {
 
 export const useImageContext = () => useContext(ImageContext);
 
-
 // // ImageContext.js
 
 // import React, { createContext, useState, useContext } from 'react';

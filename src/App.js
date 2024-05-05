@@ -14,7 +14,6 @@ function App() {
         <Router>
           <Route exact path="/" component={ProductListingPage} />
         </Router>
-        <ImageUpload />
       </ImageProvider>
     </AppProvider>
   );
@@ -22,7 +21,7 @@ function App() {
 
 export default App;
 
-
+// #1
 
 // import React from 'react';
 // import enTranslations from '@shopify/polaris/locales/en.json';

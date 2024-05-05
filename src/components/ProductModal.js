@@ -5,34 +5,51 @@ import { Modal, TextContainer, Card, Badge, Thumbnail } from '@shopify/polaris';
 function ProductModal({ open, onClose, productId, products }) {
   const product = products.find(p => p.id === productId);
 
+  if (!product) {
+    return (
+      <Modal
+        open={open}
+        onClose={onClose}
+        title="Product Not Found"
+      >
+        <Modal.Section>
+          <p>No product found with the specified ID.</p>
+        </Modal.Section>
+      </Modal>
+    );
+  }
+
+  // Check if selectedproduct is defined before accessing its properties
+  const selectedproduct = product || {};
+  const { image, description, price, category, rating, id } = selectedproduct;
+
+  // Check if rating is defined before accessing rate and count
+  const { rate, count } = rating || {};
+
   return (
     <Modal
       open={open}
       onClose={onClose}
-      title={product ? product.title : ''}
+      title={selectedproduct.title}
     >
       <Modal.Section>
-        {product ? (
-          <Card sectioned>
-            <Thumbnail
-              source={product.image}
-              alt={product.title}
-              size="large"
-            />
-            <TextContainer>
-              <p>{product.description}</p>
-              <p><strong>Price:</strong> ${product.price}</p>
-              <p><strong>Category:</strong> {product.category}</p>
-              <p><strong>Rate:</strong> {product.rate}</p>
-              <p><strong>Count:</strong> {product.count}</p>
-              <p>
-                <Badge>{product.id}</Badge>
-              </p>
-            </TextContainer>
-          </Card>
-        ) : (
-          <p>No product found</p>
-        )}
+        <Card sectioned>
+          <Thumbnail
+            source={selectedproduct.image}
+            alt={selectedproduct.title}
+            size="large"
+          />
+          <TextContainer>
+            <p>{selectedproduct.description}</p>
+            <p><strong>Price:</strong> ${selectedproduct.price}</p>
+            <p><strong>Category:</strong> {selectedproduct.category}</p>
+            {rate && <p><strong>Rate:</strong> {rate}</p>}
+            {count && <p><strong>Count:</strong> {count}</p>}
+            <p>
+              <Badge>{id}</Badge>
+            </p>
+          </TextContainer>
+        </Card>
       </Modal.Section>
     </Modal>
   );
