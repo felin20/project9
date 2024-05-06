@@ -34,19 +34,22 @@ function ProductModal({ open, onClose, productId, products }) {
     >
       <Modal.Section>
         <Card sectioned>
+          
           <Thumbnail
             source={selectedproduct.image}
             alt={selectedproduct.title}
-            size="large"
+            size="x-large"
+            
           />
+          
           <TextContainer>
-            <p>{selectedproduct.description}</p>
+            <p style={{fontWeight:'500',fontSize:'20px',position:'relative',top:'5px'}}>{selectedproduct.description}</p>
             <p><strong>Price:</strong> ${selectedproduct.price}</p>
             <p><strong>Category:</strong> {selectedproduct.category}</p>
             {rate && <p><strong>Rate:</strong> {rate}</p>}
             {count && <p><strong>Count:</strong> {count}</p>}
             <p>
-              <Badge>{id}</Badge>
+              {/* <Badge>{id}</Badge> */}
             </p>
           </TextContainer>
         </Card>

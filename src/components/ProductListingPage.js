@@ -153,15 +153,15 @@ function ProductListingPage() {
                 placeholder="Enter product title"
               />
             </div>
-            <div className="add-product-button">
-              <Button primary onClick={openAddProductModal}>Add Product</Button>
+            <div className="add-product-button" style={{position:'relative',top:'11px'}}>
+              <Button  primary onClick={openAddProductModal}>Add Product</Button>
             </div>
-            <div className="filter-icon">
+            <div className="filter-icon" style={{position:'relative',top:'11px'}}>
               <Button plain icon={AdjustIcon} onClick={toggleFilters} />
             </div>
           </div>
           {showFilters && (
-            <div className="filter-dropdown">
+            <div className="filter-dropdown" style={{position:'relative',top:'11px'}}>
               <Filters
                 filters={[
                   {
