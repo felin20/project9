@@ -145,7 +145,7 @@ function ProductListingPage() {
       <Card>
         <div className="top-section">
           <div className="filter-section">
-            <div className="filter-input">
+            <div className="filter-input" style={{marginLeft:'-40px'}}>
               <TextField
                 label="Filter by Product Title"
                 value={filterValue}
@@ -211,7 +211,7 @@ function ProductListingPage() {
         {!loading && !error && filteredProducts.length > 0 && (
           <DataTable
             columnContentTypes={['numeric','image', 'text', 'text', 'numeric', 'text']}
-            headings={[<div className='text2'style={{position:'relative',right:'10px',fontWeight:'800',fontSize:'20px'}}>No.</div>,<div></div>,'', <div style={{position:'relative',left:'200px',fontWeight:'800',fontSize:'20px'}}>Product</div>,<div style={{position:'relative',left:'50px',fontWeight:'800',fontSize:'20px'}}>Price</div>,<div style={{position:'relative',left:'145px',fontWeight:'800',fontSize:'20px'}}>Category</div>]}
+            headings={[<div className='text2'style={{position:'relative',right:'10px',fontWeight:'800',fontSize:'20px'}}>No.</div>,<div></div>,'', <div style={{position:'relative',left:'170px',fontWeight:'800',fontSize:'20px'}}>Product</div>,<div style={{position:'relative',left:'50px',fontWeight:'800',fontSize:'20px'}}>Price</div>,<div style={{position:'relative',left:'120px',fontWeight:'800',fontSize:'20px'}}>Category</div>]}
             rows={paginatedProducts.map((product, index) => (
               [
                 <div className='products-r'>
