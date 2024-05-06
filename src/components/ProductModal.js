@@ -34,13 +34,15 @@ function ProductModal({ open, onClose, productId, products }) {
     >
       <Modal.Section>
         <Card sectioned>
-          
+          <div className='text6' style={{width:'300px',height:'300px',position:'relative',left:'130px'}}>
           <Thumbnail
             source={selectedproduct.image}
             alt={selectedproduct.title}
             size="x-large"
             
           />
+          </div>
+          
           
           <TextContainer>
             <p style={{fontWeight:'500',fontSize:'20px',position:'relative',top:'5px'}}>{selectedproduct.description}</p>

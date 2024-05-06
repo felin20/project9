@@ -21,7 +21,7 @@ function App() {
 
 export default App;
 
-// #2
+// #3
 
 // import React from 'react';
 // import enTranslations from '@shopify/polaris/locales/en.json';
