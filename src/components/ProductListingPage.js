@@ -153,15 +153,15 @@ function ProductListingPage() {
                 placeholder="Enter product title"
               />
             </div>
-            <div className="add-product-button" style={{position:'relative',top:'11px'}}>
+            <div className="add-product-button" style={{position:'relative',top:'11px',left:'0px'}}>
               <Button  primary onClick={openAddProductModal}>Add Product</Button>
             </div>
-            <div className="filter-icon" style={{position:'relative',top:'11px'}}>
+            <div className="filter-icon" style={{position:'relative',top:'11px',left:'0px'}}>
               <Button plain icon={AdjustIcon} onClick={toggleFilters} />
             </div>
           </div>
           {showFilters && (
-            <div className="filter-dropdown" style={{position:'relative',top:'11px'}}>
+            <div className="filter-dropdown" style={{position:'relative',top:'11px',right:'21px'}}>
               <Filters
                 filters={[
                   {
@@ -209,13 +209,13 @@ function ProductListingPage() {
           />
         )}
         {!loading && !error && filteredProducts.length > 0 && (
-          <DataTable
+          <DataTable 
             columnContentTypes={['numeric','image', 'text', 'text', 'numeric', 'text']}
             headings={[<div className='text2'style={{position:'relative',right:'10px',fontWeight:'800',fontSize:'20px'}}>No.</div>,<div></div>,'', <div style={{position:'relative',left:'170px',fontWeight:'800',fontSize:'20px'}}>Product</div>,<div style={{position:'relative',left:'50px',fontWeight:'800',fontSize:'20px'}}>Price</div>,<div style={{position:'relative',left:'120px',fontWeight:'800',fontSize:'20px'}}>Category</div>]}
             rows={paginatedProducts.map((product, index) => (
               [
                 <div className='products-r'>
-                <button
+                <button 
                   aria-label={`View ${product.title}`}
                   className="product-row-button"
                   onClick={() => handleRowClick(product.id)}
@@ -248,6 +248,7 @@ function ProductListingPage() {
             ))}
             footerContent={`Total products: ${filteredProducts.length}`}
             className="Polaris-DataTable--wider" // Apply the class here
+            
           />
         )}
         {totalPages > 1 && (

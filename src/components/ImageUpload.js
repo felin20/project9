@@ -52,12 +52,12 @@ const UploadImage = () => {
           type='submit'
           onClick={handleImageUpload}
           className='flex-center absolute bottom-12 right-14 h-9 w-9 rounded-full'
-        >
-          <img style={{width:'5px',height:'5px'}}
+        > <p>Upload Image</p>
+          {/* <img style={{width:'5px',height:'5px'}}
             src={EditIcon}
             alt="Edit"
             className='object-cover'
-          />
+          /> */}
         </button>
         <input 
           type="file"
